@@ -1,0 +1,84 @@
+object frmAddRule: TfrmAddRule
+  Left = -612
+  Height = 89
+  Top = 400
+  Width = 274
+  BorderIcons = [biSystemMenu]
+  Caption = 'b+X [Add Rule]'
+  ClientHeight = 89
+  ClientWidth = 274
+  LCLVersion = '0.9.30.4'
+  object btnAdd: TButton
+    Left = 9
+    Height = 25
+    Top = 56
+    Width = 75
+    Caption = 'Add Rule'
+    OnClick = btnAddClick
+    TabOrder = 0
+  end
+  object lblC: TLabel
+    Left = 14
+    Height = 16
+    Top = 8
+    Width = 50
+    Caption = 'Keyword:'
+    ParentColor = False
+  end
+  object txtIn: TEdit
+    Left = 14
+    Height = 23
+    Top = 24
+    Width = 73
+    TabOrder = 1
+  end
+  object lblCB1: TLabel
+    Left = 9
+    Height = 16
+    Top = 26
+    Width = 5
+    Caption = '{'
+    ParentColor = False
+  end
+  object lblCB2: TLabel
+    Left = 88
+    Height = 16
+    Top = 26
+    Width = 5
+    Caption = '}'
+    ParentColor = False
+  end
+  object lblCIncrement: TLabel
+    Left = 176
+    Height = 16
+    Top = 8
+    Width = 58
+    Caption = 'Increment:'
+    ParentColor = False
+  end
+  object cbType: TComboBox
+    Left = 112
+    Height = 23
+    Top = 24
+    Width = 52
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      '+'
+      '-'
+      '*'
+      '/'
+    )
+    TabOrder = 2
+    Text = '+'
+  end
+  object nudIncrement: TSpinEdit
+    Left = 176
+    Height = 23
+    Top = 24
+    Width = 90
+    MaxValue = 10000000
+    MinValue = -10000000
+    TabOrder = 3
+  end
+end

@@ -1,0 +1,20 @@
+object frmOut: TfrmOut
+  Left = -641
+  Height = 240
+  Top = 587
+  Width = 320
+  BorderIcons = []
+  Caption = 'b+X [Output]'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '0.9.30.4'
+  object meOut: TMemo
+    Left = 40
+    Height = 90
+    Top = 64
+    Width = 150
+    TabOrder = 0
+  end
+end

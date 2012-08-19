@@ -1,0 +1,61 @@
+object frmMain: TfrmMain
+  Left = -643
+  Height = 240
+  Top = 304
+  Width = 320
+  Caption = 'b+X [Main Window]'
+  ClientHeight = 240
+  ClientWidth = 320
+  OnCreate = FormCreate
+  OnPaint = FormPaint
+  OnResize = FormResize
+  LCLVersion = '0.9.30.4'
+  object ListBox1: TListBox
+    Left = 8
+    Height = 72
+    Top = 24
+    Width = 304
+    ItemHeight = 0
+    TabOrder = 0
+  end
+  object lblCRules: TLabel
+    Left = 8
+    Height = 16
+    Top = 8
+    Width = 32
+    Caption = 'Rules:'
+    ParentColor = False
+  end
+  object btnAddRule: TButton
+    Left = 8
+    Height = 25
+    Top = 96
+    Width = 32
+    Caption = '+'
+    OnClick = btnAddRuleClick
+    TabOrder = 1
+  end
+  object btnDropRule: TButton
+    Left = 40
+    Height = 25
+    Top = 96
+    Width = 32
+    Caption = '-'
+    TabOrder = 2
+  end
+  object meIn: TMemo
+    Left = 8
+    Height = 88
+    Top = 144
+    Width = 302
+    TabOrder = 3
+  end
+  object lblCInput: TLabel
+    Left = 8
+    Height = 16
+    Top = 128
+    Width = 32
+    Caption = 'Input:'
+    ParentColor = False
+  end
+end
