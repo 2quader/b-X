@@ -12,6 +12,7 @@ uses
 {$R *.res}
 
 begin
+  Application.Title:='b+X';
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmOut, frmOut);
