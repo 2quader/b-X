@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ComCtrls, Spin;
+  ComCtrls, Spin, flRuleStore;
 
 type
 
@@ -19,11 +19,12 @@ type
     nudSeed: TFloatSpinEdit;
     nudIncrement: TFloatSpinEdit;
     lblCIncrement: TLabel;
-    txtIn: TEdit;
+    txtKeyword: TEdit;
     lblC: TLabel;
     lblCB2: TLabel;
     lblCB1: TLabel;
     procedure btnAddClick(Sender: TObject);
+    procedure recvRuleStore(pRuleStore: TRuleStore);
   private
     { private declarations }
   public
@@ -32,6 +33,7 @@ type
 
 var
   frmAddRule: TfrmAddRule;
+  ruleStore: TRuleStore;
 
 implementation
 
@@ -41,7 +43,13 @@ implementation
 
 procedure TfrmAddRule.btnAddClick(Sender: TObject);
 begin
+  ruleStore.addRule(txtKeyword.Text, cbType.Text, nudSeed.Value, nudIncrement.Value);
   self.Close;
+end;
+
+procedure TfrmAddRule.recvRuleStore(pRuleStore: TRuleStore);
+begin
+  ruleStore := pRuleStore;
 end;
 
 end.

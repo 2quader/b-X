@@ -15,7 +15,7 @@ object frmAddRule: TfrmAddRule
     Width = 75
     Caption = 'Add Rule'
     OnClick = btnAddClick
-    TabOrder = 0
+    TabOrder = 4
   end
   object lblC: TLabel
     Left = 14
@@ -25,12 +25,12 @@ object frmAddRule: TfrmAddRule
     Caption = 'Keyword:'
     ParentColor = False
   end
-  object txtIn: TEdit
+  object txtKeyword: TEdit
     Left = 14
     Height = 23
     Top = 24
     Width = 73
-    TabOrder = 1
+    TabOrder = 0
   end
   object lblCB1: TLabel
     Left = 9
@@ -49,7 +49,7 @@ object frmAddRule: TfrmAddRule
     ParentColor = False
   end
   object lblCIncrement: TLabel
-    Left = 176
+    Left = 280
     Height = 16
     Top = 8
     Width = 58
@@ -69,11 +69,12 @@ object frmAddRule: TfrmAddRule
       '*'
       '/'
     )
-    TabOrder = 2
+    Style = csDropDownList
+    TabOrder = 1
     Text = '+'
   end
   object nudIncrement: TFloatSpinEdit
-    Left = 176
+    Left = 280
     Height = 23
     Top = 24
     Width = 90
@@ -81,21 +82,21 @@ object frmAddRule: TfrmAddRule
     MaxValue = 10000000
     MinValue = -10000000
     TabOrder = 3
-    Value = 0
+    Value = 1
   end
   object nudSeed: TFloatSpinEdit
-    Left = 280
+    Left = 176
     Height = 23
     Top = 24
     Width = 90
     Increment = 1
     MaxValue = 10000000
     MinValue = -10000000
-    TabOrder = 4
-    Value = 0
+    TabOrder = 2
+    Value = 1
   end
   object lblSeed: TLabel
-    Left = 280
+    Left = 176
     Height = 16
     Top = 8
     Width = 29

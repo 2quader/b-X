@@ -33,19 +33,19 @@ implementation
 
 procedure TfrmOut.FormCreate(Sender: TObject);
 begin
-  meOut.Width:=self.Width;
-  meOut.Height:=self.Height;
+  meOut.Width := self.Width;
+  meOut.Height := self.Height;
 end;
 
 procedure TfrmOut.FormResize(Sender: TObject);
 begin
-  meOut.Width:=self.Width;
-  meOut.Height:=self.Height;
+  meOut.Width := self.Width;
+  meOut.Height := self.Height;
 end;
 
 procedure TfrmOut.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-    CloseAction:=caNone;
+    CloseAction := caNone;
 end;
 
 end.

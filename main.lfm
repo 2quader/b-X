@@ -74,4 +74,13 @@ object frmMain: TfrmMain
     Caption = 'Loops:'
     ParentColor = False
   end
+  object Button1: TButton
+    Left = 232
+    Height = 25
+    Top = 104
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 5
+  end
 end
