@@ -15,8 +15,10 @@ type
   TfrmAddRule = class(TForm)
     btnAdd: TButton;
     cbType: TComboBox;
+    lblSeed: TLabel;
+    nudSeed: TFloatSpinEdit;
+    nudIncrement: TFloatSpinEdit;
     lblCIncrement: TLabel;
-    nudIncrement: TSpinEdit;
     txtIn: TEdit;
     lblC: TLabel;
     lblCB2: TLabel;

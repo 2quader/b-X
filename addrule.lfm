@@ -1,12 +1,12 @@
 object frmAddRule: TfrmAddRule
-  Left = -612
+  Left = 255
   Height = 89
-  Top = 400
-  Width = 274
+  Top = 461
+  Width = 380
   BorderIcons = [biSystemMenu]
   Caption = 'b+X [Add Rule]'
   ClientHeight = 89
-  ClientWidth = 274
+  ClientWidth = 380
   LCLVersion = '0.9.30.4'
   object btnAdd: TButton
     Left = 9
@@ -72,13 +72,34 @@ object frmAddRule: TfrmAddRule
     TabOrder = 2
     Text = '+'
   end
-  object nudIncrement: TSpinEdit
+  object nudIncrement: TFloatSpinEdit
     Left = 176
     Height = 23
     Top = 24
     Width = 90
+    Increment = 1
     MaxValue = 10000000
     MinValue = -10000000
     TabOrder = 3
+    Value = 0
+  end
+  object nudSeed: TFloatSpinEdit
+    Left = 280
+    Height = 23
+    Top = 24
+    Width = 90
+    Increment = 1
+    MaxValue = 10000000
+    MinValue = -10000000
+    TabOrder = 4
+    Value = 0
+  end
+  object lblSeed: TLabel
+    Left = 280
+    Height = 16
+    Top = 8
+    Width = 29
+    Caption = 'Seed:'
+    ParentColor = False
   end
 end

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Output, AddRule;
+  Spin, Output, AddRule;
 
 type
 
@@ -15,15 +15,14 @@ type
   TfrmMain = class(TForm)
     btnAddRule: TButton;
     btnDropRule: TButton;
+    lblCLoops: TLabel;
     lblCInput: TLabel;
     lblCRules: TLabel;
     ListBox1: TListBox;
     meIn: TMemo;
+    nudLoops: TSpinEdit;
     procedure btnAddRuleClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormPaint(Sender: TObject);
-    procedure FormResize(Sender: TObject);
-    procedure refreshFrmOutPos();
   private
     { private declarations }
   public
@@ -42,32 +41,28 @@ implementation
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
   frmOut:=TfrmOut.Create(self);
-  refreshFrmOutPos();
+  frmOut.Left:=frmMain.Left;
+  frmOut.Top:=frmMain.Top + frmMain.Height + 42;
   frmOut.Show;
-end;
-
-procedure TfrmMain.FormPaint(Sender: TObject);
-begin
-  refreshFrmOutPos();
-end;
-
-procedure TfrmMain.FormResize(Sender: TObject);
-begin
-  refreshFrmOutPos();
 end;
 
 procedure TfrmMain.btnAddRuleClick(Sender: TObject);
 var
   frmAddRule: TfrmAddRule;
+  over: Integer;
 begin
-  frmAddRule := TfrmAddRule.Create(self);
-  frmAddRule.ShowModal;
-end;
+  frmAddRule:=TfrmAddRule.Create(self);
+  frmAddRule.Top:=Round((self.Top + (self.Height / 2)) - (frmAddRule.Height / 2));
 
-procedure TfrmMain.refreshFrmOutPos();
-begin
-  frmOut.Left:=frmMain.Left;
-  frmOut.Top:=frmMain.Top + frmMain.Height + 24;
+  over:=Round((frmAddrule.Width - self.Width)/2);
+  if self.Left < over then
+    frmAddRule.Left:=self.Left
+  else if (self.Left + self.Width + over) > Monitor.Width then
+    frmAddRule.Left:=Round((self.Left - over * 2))
+  else
+    frmAddRule.Left:=Round((self.Left - over));
+
+  frmAddRule.ShowModal;
 end;
 
 end.

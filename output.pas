@@ -15,6 +15,7 @@ type
     meOut: TMemo;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     { private declarations }
   public
@@ -32,7 +33,14 @@ implementation
 
 procedure TfrmOut.FormCreate(Sender: TObject);
 begin
+  meOut.Width:=self.Width;
+  meOut.Height:=self.Height;
+end;
 
+procedure TfrmOut.FormResize(Sender: TObject);
+begin
+  meOut.Width:=self.Width;
+  meOut.Height:=self.Height;
 end;
 
 procedure TfrmOut.FormClose(Sender: TObject; var CloseAction: TCloseAction);
