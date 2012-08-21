@@ -5,7 +5,8 @@ unit Output;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  Clipbrd, ExtCtrls;
 
 type
 
@@ -13,9 +14,13 @@ type
 
   TfrmOut = class(TForm)
     meOut: TMemo;
+    pnlCopied: TPanel;
+    tmrHidePnl: TTimer;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure meOutDblClick(Sender: TObject);
+    procedure tmrHidePnlTimer(Sender: TObject);
   private
     { private declarations }
   public
@@ -43,9 +48,23 @@ begin
   meOut.Height := self.Height;
 end;
 
+procedure TfrmOut.meOutDblClick(Sender: TObject);
+begin
+  Clipboard.AsText := meOut.Text;
+  pnlCopied.Top := Round((self.Height / 2) - (pnlCopied.Height / 2));
+  pnlCopied.Left := Round((self.Width / 2) - (pnlCopied.Width / 2));
+  pnlCopied.Visible := True;
+  tmrHidePnl.Enabled := True;
+end;
+
+procedure TfrmOut.tmrHidePnlTimer(Sender: TObject);
+begin
+  pnlCopied.Visible := False;
+end;
+
 procedure TfrmOut.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
-    CloseAction := caNone;
+  CloseAction := caNone;
 end;
 
 end.

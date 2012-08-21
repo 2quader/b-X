@@ -16,7 +16,26 @@ object frmOut: TfrmOut
     Height = 90
     Top = 0
     Width = 150
+    OnDblClick = meOutDblClick
     ScrollBars = ssAutoVertical
     TabOrder = 0
+  end
+  object pnlCopied: TPanel
+    Left = 80
+    Height = 64
+    Top = 160
+    Width = 163
+    Caption = 'Copied.'
+    Font.Height = -27
+    ParentFont = False
+    TabOrder = 1
+    Visible = False
+  end
+  object tmrHidePnl: TTimer
+    Enabled = False
+    Interval = 2000
+    OnTimer = tmrHidePnlTimer
+    left = 189
+    top = 123
   end
 end

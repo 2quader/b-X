@@ -133,6 +133,7 @@ var
   i: Integer;
   i2: Integer;
   tmpStr: String;
+  delimiter: String;
 begin
   frmOut.meOut.Lines.Clear;
   tmpStr := meIn.Text;
@@ -148,12 +149,15 @@ begin
     end;
 
     if cbDelimiter.ItemIndex = 0 then
-      frmOut.meOut.Lines.Add(tmpStr)
+      delimiter := sLineBreak
     else if cbDelimiter.ItemIndex = 1 then
-      frmOut.meOut.Text := frmOut.meOut.Text + tmpStr + ' '
+      delimiter := ' '
     else if cbDelimiter.ItemIndex > 2 then
-      frmOut.meOut.Text := frmOut.meOut.Text + tmpStr + cbDelimiter.Text;
+      delimiter := cbDelimiter.Text;
+
+    frmOut.meOut.Text := frmOut.meOut.Text + tmpStr + delimiter;
   end;
+  frmOut.meOut.Text := LeftStr(frmOut.meOut.Text, Length(frmOut.meOut.Text) - Length(delimiter));
 end;
 
 procedure TfrmMain.cbDelimiterChange(Sender: TObject);
