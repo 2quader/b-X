@@ -15,6 +15,7 @@ object frmMain: TfrmMain
     Top = 24
     Width = 419
     ItemHeight = 0
+    OnDblClick = lbxRulesDblClick
     TabOrder = 6
   end
   object lblCRules: TLabel
@@ -40,6 +41,7 @@ object frmMain: TfrmMain
     Top = 96
     Width = 32
     Caption = '-'
+    OnClick = btnDropRuleClick
     TabOrder = 1
   end
   object meIn: TMemo

@@ -1,0 +1,93 @@
+object frmEditRule: TfrmEditRule
+  Left = 325
+  Height = 89
+  Top = 448
+  Width = 306
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'b+X [Edit Rule]'
+  ClientHeight = 89
+  ClientWidth = 306
+  LCLVersion = '0.9.30.4'
+  object btnEdit: TButton
+    Left = 9
+    Height = 25
+    Top = 56
+    Width = 75
+    Caption = 'Edit Rule'
+    OnClick = btnEditClick
+    TabOrder = 3
+  end
+  object lblC: TLabel
+    Left = 14
+    Height = 16
+    Top = 8
+    Width = 50
+    Caption = 'Keyword:'
+    ParentColor = False
+  end
+  object txtKeyword: TEdit
+    Left = 14
+    Height = 23
+    Top = 24
+    Width = 73
+    OnKeyPress = txtKeywordKeyPress
+    TabOrder = 0
+  end
+  object lblCB1: TLabel
+    Left = 9
+    Height = 16
+    Top = 26
+    Width = 5
+    Caption = '{'
+    ParentColor = False
+  end
+  object lblCB2: TLabel
+    Left = 88
+    Height = 16
+    Top = 26
+    Width = 5
+    Caption = '}'
+    ParentColor = False
+  end
+  object lblCIncrement: TLabel
+    Left = 208
+    Height = 16
+    Top = 8
+    Width = 58
+    Caption = 'Increment:'
+    ParentColor = False
+  end
+  object nudIncrement: TFloatSpinEdit
+    Left = 208
+    Height = 23
+    Top = 24
+    Width = 90
+    Increment = 1
+    MaxValue = 10000000
+    MinValue = -10000000
+    OnKeyPress = nudIncrementKeyPress
+    TabOrder = 2
+    Value = 1
+  end
+  object nudSeed: TFloatSpinEdit
+    Left = 104
+    Height = 23
+    Top = 24
+    Width = 90
+    Increment = 1
+    MaxValue = 10000000
+    MinValue = -10000000
+    OnKeyPress = nudSeedKeyPress
+    TabOrder = 1
+    Value = 1
+  end
+  object lblSeed: TLabel
+    Left = 104
+    Height = 16
+    Top = 8
+    Width = 29
+    Caption = 'Seed:'
+    ParentColor = False
+  end
+end

@@ -7,9 +7,13 @@ unit flRuleStore;
 interface
 
 uses
-  Classes, SysUtils;
+  Classes, SysUtils, fgl;
 
 type
+  //TStringList = specialize TList<string>;
+  //TRealList = specialize TList<real>;
+  TStrList = specialize TFPGList<String>;
+  TRealList = specialize TFPGList<Real>;
   TRuleStore = class(TObject)
     constructor Create();
     function getKeyword(I: integer): string;
@@ -25,17 +29,17 @@ type
   end;
 
 var
-  keyword: array of string;
-  seed: array of real;
-  increment: array of real;
+  keyword: TStrList;
+  seed: TRealList;
+  increment: TRealList;
 
 implementation
 
 constructor TRuleStore.Create();
 begin
-  SetLength(keyword, 0);
-  SetLength(seed, 0);
-  SetLength(increment, 0);
+  keyword := TStrList.Create;
+  seed := TRealList.Create;
+  increment := TRealList.Create;
 end;
 
 // Returns keyword[I]
@@ -47,7 +51,7 @@ end;
 // Returns seed[I]
 function TRuleStore.getSeed(I: integer): real;
 begin
-  getSeed := seed[I];
+  getSeed := seed[I]
 end;
 
 // Returns increment[I]
@@ -77,26 +81,22 @@ end;
 // Deletes a rule
 procedure TRuleStore.deleteRule(I: integer);
 begin
-  // Todo.
+  keyword.Delete(I);
+  seed.Delete(I);
+  increment.Delete(I);
 end;
 
 // Adds a rule
 procedure TRuleStore.addRule(pKeyword: string; pSeed: real; pIncrement: real);
 begin
-  // Length(Arrays) += 1
-  SetLength(keyword, Length(keyword) + 1);
-  SetLength(seed, Length(seed) + 1);
-  SetLength(increment, Length(increment) + 1);
-
-  // Add rule at the end of the arrays
-  keyword[Length(keyword) - 1] := pKeyword;
-  seed[Length(seed) - 1] := pSeed;
-  increment[Length(increment) - 1] := pIncrement;
+  keyword.Add(pKeyword);
+  seed.Add(pSeed);
+  increment.add(pIncrement);
 end;
 
 function TRuleStore.getLength() : Integer;
 begin
-  getLength := Length(keyword);
+  getLength := keyword.Count;
 end;
 
 function TRuleStore.checkKeyword(pKeyword: String) : Boolean;

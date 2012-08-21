@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Spin, Output, AddRule, flRuleStore;
+  Spin, Output, AddRule, EditRule, flRuleStore;
 
 type
 
@@ -25,10 +25,12 @@ type
     meIn: TMemo;
     nudLoops: TSpinEdit;
     procedure btnAddRuleClick(Sender: TObject);
+    procedure btnDropRuleClick(Sender: TObject);
     procedure btnStartClick(Sender: TObject);
     procedure cbDelimiterChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
+    procedure lbxRulesDblClick(Sender: TObject);
     procedure refillLbxRules();
   private
     { private declarations }
@@ -75,6 +77,30 @@ begin
   meIn.Top := lbxRules.Top + lbxRules.Height + 48;
 end;
 
+procedure TfrmMain.lbxRulesDblClick(Sender: TObject);
+var
+  frmEditRule: TfrmEditRule;
+  over: Integer;
+begin
+  if lbxRules.ItemIndex > -1 then
+  begin
+    frmEditRule := TfrmEditRule.Create(self);
+    frmEditRule.Top := Round((self.Top + (self.Height / 2)) - (frmEditRule.Height / 2));
+
+    over := Round((frmEditRule.Width - self.Width)/2);
+    if self.Left < over then
+      frmEditRule.Left := self.Left
+    else if (self.Left + self.Width + over) > Monitor.Width then
+      frmEditRule.Left := Round((self.Left - over * 2))
+    else
+      frmEditRule.Left := Round((self.Left - over));
+
+    frmEditRule.recvData(ruleStore, lbxRules.ItemIndex);
+    frmEditRule.ShowModal;
+    refillLbxRules();
+  end;
+end;
+
 procedure TfrmMain.btnAddRuleClick(Sender: TObject);
 var
   frmAddRule: TfrmAddRule;
@@ -83,7 +109,7 @@ begin
   frmAddRule := TfrmAddRule.Create(self);
   frmAddRule.Top := Round((self.Top + (self.Height / 2)) - (frmAddRule.Height / 2));
 
-  over := Round((frmAddrule.Width - self.Width)/2);
+  over := Round((frmAddRule.Width - self.Width)/2);
   if self.Left < over then
     frmAddRule.Left := self.Left
   else if (self.Left + self.Width + over) > Monitor.Width then
@@ -93,6 +119,12 @@ begin
 
   frmAddRule.recvRuleStore(ruleStore);
   frmAddRule.ShowModal;
+  refillLbxRules();
+end;
+
+procedure TfrmMain.btnDropRuleClick(Sender: TObject);
+begin
+  ruleStore.deleteRule(lbxRules.ItemIndex);
   refillLbxRules();
 end;
 
@@ -111,7 +143,7 @@ begin
     for i2 := 0 to ruleStore.getLength() - 1 do
     begin
       tmpStr := StringReplace(tmpStr, '{' + ruleStore.getKeyword(i2) + '}',
-                  FloatToStr((i - ruleStore.getSeed(i2) - 1) * ruleStore.getIncrement(i2)),
+                  FloatToStr((i + ruleStore.getSeed(i2) - 1) * ruleStore.getIncrement(i2)),
                   [rfReplaceAll]);
     end;
 

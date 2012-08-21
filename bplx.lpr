@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, Main, Output, AddRule, flRuleStore;
+  Forms, Main, Output, AddRule, flRuleStore, EditRule;
 
 {$R *.res}
 
@@ -17,6 +17,7 @@ begin
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TfrmOut, frmOut);
   Application.CreateForm(TfrmAddRule, frmAddRule);
+  Application.CreateForm(TfrmEditRule, frmEditRule);
   Application.Run;
 end.
 
