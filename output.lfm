@@ -16,6 +16,7 @@ object frmOut: TfrmOut
     Height = 90
     Top = 0
     Width = 150
+    ScrollBars = ssAutoVertical
     TabOrder = 0
   end
 end

@@ -1,12 +1,13 @@
 object frmAddRule: TfrmAddRule
   Left = 255
   Height = 89
-  Top = 461
-  Width = 380
+  Top = 448
+  Width = 306
   BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
   Caption = 'b+X [Add Rule]'
   ClientHeight = 89
-  ClientWidth = 380
+  ClientWidth = 306
   LCLVersion = '0.9.30.4'
   object btnAdd: TButton
     Left = 9
@@ -15,7 +16,7 @@ object frmAddRule: TfrmAddRule
     Width = 75
     Caption = 'Add Rule'
     OnClick = btnAddClick
-    TabOrder = 4
+    TabOrder = 3
   end
   object lblC: TLabel
     Left = 14
@@ -30,6 +31,7 @@ object frmAddRule: TfrmAddRule
     Height = 23
     Top = 24
     Width = 73
+    OnKeyPress = txtKeywordKeyPress
     TabOrder = 0
   end
   object lblCB1: TLabel
@@ -49,54 +51,39 @@ object frmAddRule: TfrmAddRule
     ParentColor = False
   end
   object lblCIncrement: TLabel
-    Left = 280
+    Left = 208
     Height = 16
     Top = 8
     Width = 58
     Caption = 'Increment:'
     ParentColor = False
   end
-  object cbType: TComboBox
-    Left = 112
-    Height = 23
-    Top = 24
-    Width = 52
-    ItemHeight = 15
-    ItemIndex = 0
-    Items.Strings = (
-      '+'
-      '-'
-      '*'
-      '/'
-    )
-    Style = csDropDownList
-    TabOrder = 1
-    Text = '+'
-  end
   object nudIncrement: TFloatSpinEdit
-    Left = 280
+    Left = 208
     Height = 23
     Top = 24
     Width = 90
     Increment = 1
     MaxValue = 10000000
     MinValue = -10000000
-    TabOrder = 3
-    Value = 1
-  end
-  object nudSeed: TFloatSpinEdit
-    Left = 176
-    Height = 23
-    Top = 24
-    Width = 90
-    Increment = 1
-    MaxValue = 10000000
-    MinValue = -10000000
+    OnKeyPress = nudIncrementKeyPress
     TabOrder = 2
     Value = 1
   end
+  object nudSeed: TFloatSpinEdit
+    Left = 104
+    Height = 23
+    Top = 24
+    Width = 90
+    Increment = 1
+    MaxValue = 10000000
+    MinValue = -10000000
+    OnKeyPress = nudSeedKeyPress
+    TabOrder = 1
+    Value = 1
+  end
   object lblSeed: TLabel
-    Left = 176
+    Left = 104
     Height = 16
     Top = 8
     Width = 29
