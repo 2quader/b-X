@@ -26,6 +26,7 @@ type
     procedure addRule(pKeyword: string; pSeed: real; pIncrement: real);
     function getLength() : Integer;
     function checkKeyword(pKeyword: String) : Boolean;
+    procedure clear();
   end;
 
 var
@@ -108,6 +109,13 @@ begin
       checkKeyword := False
     else
       checkKeyword := True
+end;
+
+procedure TRuleStore.clear();
+begin
+  keyword.Clear;
+  seed.Clear;
+  increment.Clear;
 end;
 
 end.

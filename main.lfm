@@ -1,11 +1,13 @@
 object frmMain: TfrmMain
   Left = 252
-  Height = 240
+  Height = 262
   Top = 167
   Width = 437
   Caption = 'b+X [Main Window]'
-  ClientHeight = 240
+  ClientHeight = 242
   ClientWidth = 437
+  Menu = MainMenu
+  OnClose = FormClose
   OnCreate = FormCreate
   OnResize = FormResize
   LCLVersion = '0.9.30.4'
@@ -111,5 +113,52 @@ object frmMain: TfrmMain
     Width = 52
     Caption = 'Delimiter:'
     ParentColor = False
+  end
+  object MainMenu: TMainMenu
+    left = 180
+    top = 48
+    object miFile: TMenuItem
+      Caption = 'File'
+      object miNew: TMenuItem
+        Caption = 'New'
+        ShortCut = 16462
+        OnClick = miNewClick
+      end
+      object miSep1: TMenuItem
+        Caption = '-'
+      end
+      object miOpen: TMenuItem
+        Caption = 'Open...'
+        ShortCut = 16463
+        OnClick = miOpenClick
+      end
+      object miSave: TMenuItem
+        Caption = 'Save'
+        Enabled = False
+        OnClick = miSaveClick
+      end
+      object miSaveAs: TMenuItem
+        Caption = 'Save As...'
+        ShortCut = 16467
+        OnClick = miSaveAsClick
+      end
+      object miSep2: TMenuItem
+        Caption = '-'
+      end
+      object miExit: TMenuItem
+        Caption = 'Exit'
+        OnClick = miExitClick
+      end
+    end
+  end
+  object SaveDialog: TSaveDialog
+    Filter = 'b+X-File (*.bpx)|*.bpx'
+    left = 216
+    top = 48
+  end
+  object OpenDialog: TOpenDialog
+    Filter = 'b+X-File (*.bpx)|*.bpx'
+    left = 254
+    top = 48
   end
 end
