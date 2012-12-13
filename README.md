@@ -4,9 +4,9 @@ b+X ist eine Software, die durchnummerierte Listen erstellt. Dazu erstellt man e
 
 # Downloads (Binaries)
 
-[Windows (Setup)](http://githubdl.bitendlager.tk/b-X/bplx_win_setup.zip)
-[Windows (Portable)](http://githubdl.bitendlager.tk/b-X/bplx_win_portable.zip)
-[Linux](http://githubdl.bitendlager.tk/b-X/bplx_linux.zip)
+* [Windows (Setup)](http://githubdl.bitendlager.tk/b-X/bplx_win_setup.zip)
+* [Windows (Portable)](http://githubdl.bitendlager.tk/b-X/bplx_win_portable.zip)
+* [Linux](http://githubdl.bitendlager.tk/b-X/bplx_linux.zip)
 
 
 # Screenshots
