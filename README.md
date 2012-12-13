@@ -12,4 +12,4 @@ b+X ist eine Software, die durchnummerierte Listen erstellt. Dazu erstellt man e
 
 # Wie darf ich die Software nutzen, verändern, weitergeben, ...?
 
-Kurzform: webBkmx steht unter der MIT-Lizenz. Weitere Informationen in LICENSE.txt.
+Kurzform: b+X steht unter der MIT-Lizenz. Weitere Informationen in LICENSE.txt.
