@@ -4,18 +4,18 @@ b+X ist eine Software, die durchnummerierte Listen erstellt. Dazu erstellt man e
 
 # Downloads (Binaries)
 
-* [Windows (Setup)](http://githubdl.bitendlager.tk/b-X/bplx_win_setup.zip)
-* [Windows (Portable)](http://githubdl.bitendlager.tk/b-X/bplx_win_portable.zip)
-* [Linux](http://githubdl.bitendlager.tk/b-X/bplx_linux.zip)
+* [Windows (Setup)](https://content.wuala.com/contents/n103/githubdl/b-X/bplx_win_setup.zip?key=2ELpgYeo4UWK&dl=1)
+* [Windows (Portable)](https://content.wuala.com/contents/n103/githubdl/b-X/bplx_win_portable.zip?key=2ELpgYeo4UWK&dl=1)
+* [Linux](https://content.wuala.com/contents/n103/githubdl/b-X/bplx_linux.zip?key=2ELpgYeo4UWK&dl=1)
 
 
 # Screenshots
 
-![Screenshot 1](http://embed.githubdl.bitendlager.tk/b-X/screenshot_1.png)
+![Screenshot 1](https://content.wuala.com/contents/n103/githubdl/b-X/screenshot_1.png?key=2ELpgYeo4UWK)
 
-![Screenshot 2](http://embed.githubdl.bitendlager.tk/b-X/screenshot_2.png)
+![Screenshot 2](https://content.wuala.com/contents/n103/githubdl/b-X/screenshot_2.png?key=2ELpgYeo4UWK)
 
-![Screenshot 3](http://embed.githubdl.bitendlager.tk/b-X/screenshot_3.png)
+![Screenshot 3](https://content.wuala.com/contents/n103/githubdl/b-X/screenshot_3.png?key=2ELpgYeo4UWK)
 
 # Wie darf ich die Software nutzen, verändern, weitergeben, ...?
 
